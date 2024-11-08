@@ -9,7 +9,7 @@ function NavScrollExample() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+        <img src="/png-transparent-netflix-logo-logos-brands-in-colors-icon-removebg-preview.png" height={80} width={80}></img>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -18,20 +18,10 @@ function NavScrollExample() {
             navbarScroll
           >
             <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Link
-            </Nav.Link>
+            <Nav.Link href="#action2">Series</Nav.Link>
+            <Nav.Link href="#action3">Movies</Nav.Link>
+            <Nav.Link href="#action4">Recently Added</Nav.Link>
+            <Nav.Link href="#action5">My list</Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control
