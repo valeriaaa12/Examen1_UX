@@ -35,7 +35,7 @@ function NavScrollExample() {
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-light">Search</Button> {/* Changed to light outline */}
+            <Button variant="outline-none"><img src="/image (18).png" height={25}></img></Button> {/* Changed to light outline */}
           </Form>
         </Navbar.Collapse>
       </Container>
