@@ -7,9 +7,14 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function NavScrollExample() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" style={{ backgroundColor: 'transparent' }}>
       <Container fluid>
-        <img src="/png-transparent-netflix-logo-logos-brands-in-colors-icon-removebg-preview.png" height={80} width={80}></img>
+        <img
+          src="/png-transparent-netflix-logo-logos-brands-in-colors-icon-removebg-preview.png"
+          height={80}
+          width={80}
+          alt="Logo"
+        />
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -17,11 +22,11 @@ function NavScrollExample() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Series</Nav.Link>
-            <Nav.Link href="#action3">Movies</Nav.Link>
-            <Nav.Link href="#action4">Recently Added</Nav.Link>
-            <Nav.Link href="#action5">My list</Nav.Link>
+            <Nav.Link href="#action1" style={{ color: 'white' }}>Home</Nav.Link>
+            <Nav.Link href="#action2" style={{ color: 'white' }}>Series</Nav.Link>
+            <Nav.Link href="#action3" style={{ color: 'white' }}>Movies</Nav.Link>
+            <Nav.Link href="#action4" style={{ color: 'white' }}>Recently Added</Nav.Link>
+            <Nav.Link href="#action5" style={{ color: 'white' }}>My list</Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control
@@ -30,7 +35,7 @@ function NavScrollExample() {
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success">Search</Button>
+            <Button variant="outline-light">Search</Button> {/* Changed to light outline */}
           </Form>
         </Navbar.Collapse>
       </Container>
