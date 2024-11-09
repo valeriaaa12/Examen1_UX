@@ -63,7 +63,7 @@ const featuredContent = [
     title: "White Chicks",
     description: "Two disgraced FBI agents go way undercover in an effort to protect hotel heiresses the Wilson sisters from a kidnapping plot.",
     imageUrl: "/demonslayer.jpg",
-    videoUrl: "https://www.youtube.com/embed/aeVkbNka9HM",
+    videoUrl: "https://www.youtube.com/embed/aeVkbNka9HM?si=eJKRfzcjt1hI3Ep3",
     rating: "16+",
     type: "FILM"
   }
@@ -71,47 +71,30 @@ const featuredContent = [
 
 const Carrousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [autoPlay, setAutoPlay] = useState(true);
 
   const handleSlideChange = (selectedIndex) => {
-    setActiveIndex(selectedIndex);
-    setAutoPlay(false); // Temporarily disable autoplay on manual navigation
+    setActiveIndex(selectedIndex); // Updates the active slide
   };
 
   useEffect(() => {
-    let interval;
-    if (autoPlay) {
-      interval = setInterval(() => {
-        setActiveIndex((current) => 
-          current === featuredContent.length - 1 ? 0 : current + 1
-        );
-      }, 10000); // 4-second autoplay interval
-    }
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => 
+        prevIndex === featuredContent.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 10000); // Autoplay interval
 
-    return () => clearInterval(interval);
-  }, [autoPlay, activeIndex]);
-
-  // Resume autoplay after a short delay when manually navigating
-  useEffect(() => {
-    if (!autoPlay) {
-      const autoResume = setTimeout(() => setAutoPlay(true), 5000); // Resume autoplay after 5 seconds
-      return () => clearTimeout(autoResume);
-    }
-  }, [autoPlay]);
+    return () => clearInterval(interval); // Clear interval on unmount
+  }, [activeIndex]);
 
   return (
-    <div 
-      onMouseEnter={() => setAutoPlay(false)} // Pause on hover
-      onMouseLeave={() => setAutoPlay(true)}  // Resume on mouse leave
-    >
-      <Carousel 
+    <div>
+      <Carousel
         className="hero-carousel"
-        interval={null} 
-        pause={false}
-        controls={true}
-        indicators={true}
-        onSelect={handleSlideChange}
-        activeIndex={activeIndex}
+        interval={null} // Disables auto-interval from Carousel component itself
+        controls={true} // Ensures previous/next buttons are displayed
+        indicators={true} // Display indicators
+        activeIndex={activeIndex} // Binds active slide to state
+        onSelect={handleSlideChange} // Updates state on manual change
       >
         {featuredContent.map((content, index) => (
           <Carousel.Item key={content.id} className="hero-carousel-item">

@@ -48,12 +48,24 @@
     color: #fff;
     z-index: 2;
   }
-  
-  .carousel-control-prev,
-  .carousel-control-next {
-    z-index: 3;
-    width: 5%;
-  }
+
+.carousel-control-prev, .carousel-control-next {
+  width: 5%;
+  opacity: 1; 
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  border-radius: 50%; 
+  width: 30px;
+  height: 30px;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
   
   .carousel-indicators {
     z-index: 3;
