@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import './navbar.css';
 
 function NavScrollExample() {
   return (
@@ -28,15 +29,34 @@ function NavScrollExample() {
             <Nav.Link href="#action4" style={{ color: 'white' }}>Recently Added</Nav.Link>
             <Nav.Link href="#action5" style={{ color: 'white' }}>My list</Nav.Link>
           </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-none"><img src="/image (18).png" height={25}></img></Button> {/* Changed to light outline */}
-          </Form>
+          <div className="d-flex align-items-center">
+              <Form className="d-flex me-3">
+                <div className="search-container">
+                  <Button variant="link" className="search-button p-0">
+                    <img src="/image (18).png" height={25} alt="Search" />
+                  </Button>
+                  <Form.Control
+                    type="search"
+                    placeholder="Search"
+                    className="search-input"
+                    aria-label="Search"
+                  />
+                </div>
+              </Form>
+              
+              <Button variant="link" className="notification-bell p-0 me-3">
+                <i className="fas fa-bell text-white"></i>
+              </Button>
+              <Nav.Link href="#kids" className="me-3 text-white">Kids</Nav.Link>
+              <img
+                src="/images.png"
+                alt="Profile"
+                className="profile-avatar"
+                height={32}
+                width={32}
+              />
+            </div>
+          
         </Navbar.Collapse>
       </Container>
     </Navbar>

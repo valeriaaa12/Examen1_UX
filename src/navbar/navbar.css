@@ -1,0 +1,77 @@
+.netflix-clone {
+    background-color: #141414;
+    min-height: 100vh;
+    color: white;
+  }
+  
+  .netflix-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 0 4%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 10%, transparent);
+    transition: background-color 0.3s ease;
+  }
+  
+  .netflix-navbar.scrolled {
+    background-color: #141414;
+  }
+  
+  .netflix-logo {
+    object-fit: contain;
+  }
+  
+  .netflix-nav-links .nav-link {
+    color: #e5e5e5 !important;
+    margin-left: 20px;
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .netflix-nav-links .nav-link:hover {
+    color: #b3b3b3 !important;
+  }
+  
+  .search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-input {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: white;
+    padding: 5px 10px;
+    margin-left: 10px;
+    transition: width 0.3s ease;
+    width: 200px;
+  }
+  
+  .search-input::placeholder {
+    color: #b3b3b3;
+  }
+  
+  .profile-avatar {
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+ 
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .movie-title {
+      font-size: 2rem;
+    }
+  
+    .movie-description {
+      font-size: 1rem;
+    }
+  
+    .hero-content {
+      top: 20%;
+      max-width: 90%;
+    }
+  }
