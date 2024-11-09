@@ -12,7 +12,7 @@ code {
     monospace;
 }
 body, html {
-  background-color: black !important;
+  background-color:black;
   height: 100%;
   margin: 0;
 }

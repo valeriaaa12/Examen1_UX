@@ -30,33 +30,79 @@ const featuredContent = [
     videoUrl: "https://www.youtube.com/embed/Di310WS8zLk",
     rating: "13+",
     type: "SERIES"
+  },
+  {
+    id: 4,
+    title: "Love Next Door",
+    description: "A woman attempting to reboot her life returns to Korea and becomes entangled with her childhood friend — with whom she shares a complicated history.",
+    imageUrl: "/AAAAQQdXat-FiWSV2bBBkvTzXOWSLOsm2D3CfuVXWqGdr8qXNOyGSgrUjNNcGfCSaKuGvGn79UdytbRZpGrp-2LPHJTaxFJ4-5Kp5xHvW8AznndskRBydzHQgxIZrSQ4t8m3Pkon124MRFKbZ_YtMyOIjnQBPVQ.jpg",
+    videoUrl: "https://www.youtube.com/embed/C3TpiZndAOo",
+    rating: "13+",
+    type: "SERIES"
+  },
+  {
+    id: 5,
+    title: "Demon Slayer",
+    description: "A family is attacked by demons and only two members survive - Tanjiro and his sister Nezuko, who is turning into a demon slowly.",
+    imageUrl: "/demonslayer.jpg",
+    videoUrl: "https://www.youtube.com/embed/VQGCKyvzIM4",
+    rating: "13+",
+    type: "SERIES"
+  },
+  {
+    id: 6,
+    title: "Twilight",
+    description: "When Bella Swan moves to a small town in the Pacific Northwest, she falls in love with Edward Cullen, a mysterious classmate who reveals himself to be a 108-year-old vampire..",
+    imageUrl: "/demonslayer.jpg",
+    videoUrl: "https://www.youtube.com/embed/fX3jaAYgu2E",
+    rating: "13+",
+    type: "FILM"
+  },
+  {
+    id: 7,
+    title: "White Chicks",
+    description: "Two disgraced FBI agents go way undercover in an effort to protect hotel heiresses the Wilson sisters from a kidnapping plot.",
+    imageUrl: "/demonslayer.jpg",
+    videoUrl: "https://www.youtube.com/embed/aeVkbNka9HM",
+    rating: "16+",
+    type: "FILM"
   }
 ];
 
 const Carrousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
+  const [autoPlay, setAutoPlay] = useState(true);
 
   const handleSlideChange = (selectedIndex) => {
     setActiveIndex(selectedIndex);
+    setAutoPlay(false); // Temporarily disable autoplay on manual navigation
   };
 
   useEffect(() => {
     let interval;
-    if (!isHovered) {
+    if (autoPlay) {
       interval = setInterval(() => {
         setActiveIndex((current) => 
           current === featuredContent.length - 1 ? 0 : current + 1
         );
-      }, 40000);
+      }, 10000); // 4-second autoplay interval
     }
+
     return () => clearInterval(interval);
-  }, [isHovered]);
+  }, [autoPlay, activeIndex]);
+
+  // Resume autoplay after a short delay when manually navigating
+  useEffect(() => {
+    if (!autoPlay) {
+      const autoResume = setTimeout(() => setAutoPlay(true), 5000); // Resume autoplay after 5 seconds
+      return () => clearTimeout(autoResume);
+    }
+  }, [autoPlay]);
 
   return (
     <div 
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={() => setAutoPlay(false)} // Pause on hover
+      onMouseLeave={() => setAutoPlay(true)}  // Resume on mouse leave
     >
       <Carousel 
         className="hero-carousel"

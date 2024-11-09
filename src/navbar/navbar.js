@@ -8,7 +8,7 @@ import './navbar.css';
 
 function NavScrollExample() {
   return (
-    <Navbar expand="lg" style={{ backgroundColor: 'transparent' }}>
+    <Navbar expand="lg" style={{ backgroundColor: 'black' }}>
       <Container fluid>
         <img
           src="/png-transparent-netflix-logo-logos-brands-in-colors-icon-removebg-preview.png"
