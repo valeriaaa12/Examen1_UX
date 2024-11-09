@@ -3,10 +3,22 @@ import { Card } from 'react-bootstrap';
 import './HorizontalCarousel.css';
 
 const movies = [
-  { id: 1, imageUrl: '/outerbanks.png', title: 'Outer Banks', progress: 30 },
-  { id: 2, imageUrl: '/scream.jpg', title: 'Scream', progress: 60 },
-  { id: 3, imageUrl: '/venom.jpg', title: 'Venom', progress: 50 },
-  // Add the progress values you want for each movie
+  { id: 1, imageUrl: '/onepiece.jpg', progress: 40 },
+  { id: 2, imageUrl: '/lnd.jpg', progress: 60 },
+  { id: 3, imageUrl: '/venom.jpg', progress: 50 },
+  { id: 4, imageUrl: '/dandadan.jpg', progress: 20 },
+  { id: 5, imageUrl: '/k1.jpg', progress: 70 },
+  { id: 6, imageUrl: '/k2.jpg', progress: 10 },
+  { id: 7, imageUrl: '/twilight.jpg', progress: 40 },
+  { id: 8, imageUrl: '/nge.jpg', progress: 90 },
+  { id: 9, imageUrl: '/bridgerton.jpg', progress: 70 },
+  { id: 10, imageUrl: '/cmbyn.jpg', progress: 15 },
+  { id: 11, imageUrl: '/mg.jpg', progress: 63 },
+  { id: 12, imageUrl: '/gu.jpg', progress: 5 },
+  { id: 13, imageUrl: '/admv.jpg', progress: 86 },
+  { id: 14, imageUrl: '/dahmer.jpg', progress: 50 },
+  { id: 15, imageUrl: '/menendez.jpg', progress: 30 },
+  { id: 16, imageUrl: '/doc.jpg', progress: 20 }
 ];
 
 const cloneCount = 4;
@@ -75,7 +87,15 @@ const HorizontalCarousel2 = () => {
               <Card.Img variant="top" src={movie.imageUrl} alt={`Movie ${movie.title}`} />
             </Card>
             <div className="progress-bar">
-              <div className="progress" style={{ width: `${movie.progress}%` }}></div>
+            <div
+                className="progress"
+                style={{
+                        width: `${movie.progress}%`,
+                        height: '3px',  
+                        backgroundColor: '#e50914' ,
+                        marginTop:'10px'
+                }}
+            ></div>
             </div>
           </div>
         ))}

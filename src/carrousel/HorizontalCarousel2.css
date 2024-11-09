@@ -37,21 +37,19 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
 }
 
-/* Progress bar container */
 .progress-bar {
-  width: 90%; /* Slight padding from edges */
-  height: 4px; /* Adjust thickness */
-  background-color: #666; /* Light grey background */
-  margin-top: 5px;
-  border-radius: 2px;
-  overflow: hidden;
+  width: 90% !important;
+  height: 3px !important;
+  background-color: #666 !important;
+  margin-top: 5px !important;
+  border-radius: 2px !important;
+  overflow: hidden !important;
 }
 
-/* Progress fill */
 .progress {
-  height: 100%;
-  background-color: #e50914; /* Netflix red */
-  transition: width 0.3s ease; /* Smooth transition when resizing */
+  height: 100% !important;
+  background-color: #e50914 !important;
+  transition: width 0.3s ease !important;
 }
 
 .scroll-button {
