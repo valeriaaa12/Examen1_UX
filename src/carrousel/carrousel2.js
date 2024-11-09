@@ -52,6 +52,21 @@ const newMovies = [
     { id: 12, imageUrl: '/k11.jpg'},
   ];
 
+  const anime =[
+    { id: 1, imageUrl: '/dandadan2.png' },
+    { id: 2, imageUrl: '/deathnote.png' },
+    { id: 3, imageUrl: '/demonslayer2.png'},
+    { id: 4, imageUrl: '/fanletter2.png' },
+    { id: 5, imageUrl: '/haikyuu.png' },
+    { id: 6, imageUrl: '/hxh.png'},  
+    { id: 7, imageUrl: '/jjk.png' },
+    { id: 8, imageUrl: '/jojo.png' },
+    { id: 9, imageUrl: '/mob.png'},
+    { id: 10, imageUrl: '/overlord.png' },
+    { id: 11, imageUrl: '/ranma.png' },
+    { id: 12, imageUrl: '/spy.png'},
+  ];
+
 const cloneCount = 4;
 
 const HorizontalCarousel = () => {
@@ -258,5 +273,74 @@ const HorizontalCarouselNew = () => {
       </div>
     );
   };
-  export { HorizontalCarousel, HorizontalCarouselNew ,HorizontalCarouselNew2};
+
+  const AnimeCarrousel = () => {
+    const carouselRef = useRef(null);
+  
+    useEffect(() => {
+      if (carouselRef.current) {
+        const carousel = carouselRef.current;
+        carousel.scrollLeft = cloneCount * 150;
+      }
+    }, []);
+  
+    const handleScroll = () => {
+      if (carouselRef.current) {
+        const carousel = carouselRef.current;
+        if (carousel.scrollLeft <= 0) {
+          carousel.scrollLeft = carousel.scrollWidth - (cloneCount * 150 * 2);
+        }
+        if (
+          carousel.scrollLeft >=
+          carousel.scrollWidth - carousel.clientWidth
+        ) {
+          carousel.scrollLeft = cloneCount * 150;
+        }
+      }
+    };
+  
+    const scrollLeft = () => {
+      if (carouselRef.current) {
+        carouselRef.current.scrollBy({
+          left: -800,
+          behavior: 'smooth'
+        });
+      }
+    };
+  
+    const scrollRight = () => {
+      if (carouselRef.current) {
+        carouselRef.current.scrollBy({
+          left: 800,
+          behavior: 'smooth'
+        });
+      }
+    };
+  
+    const newMoviesWithClones = [
+      ...anime.slice(-cloneCount),
+      ...anime,
+      ...anime.slice(0, cloneCount)
+    ];
+  
+    return (
+      <div className="carousel-container">
+        <h2>Japanese Anime</h2>
+        <button className="scroll-button left" onClick={scrollLeft}>&lt;</button>
+        <div
+          className="horizontal-scroll"
+          ref={carouselRef}
+          onScroll={handleScroll}
+        >
+          {newMoviesWithClones.map((movie, index) => (
+            <Card key={index} className="movie-card">
+              <Card.Img variant="top" src={movie.imageUrl} />
+            </Card>
+          ))}
+        </div>
+        <button className="scroll-button right" onClick={scrollRight}>&gt;</button>
+      </div>
+    );
+  };
+  export { HorizontalCarousel, HorizontalCarouselNew ,HorizontalCarouselNew2, AnimeCarrousel};
 
