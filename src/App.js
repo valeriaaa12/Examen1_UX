@@ -2,7 +2,7 @@ import './App.css';
 import NavScrollExample from './navbar/navbar';
 import Carrousel from './carrousel/carrousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { HorizontalCarousel, HorizontalCarouselNew,HorizontalCarouselNew2, AnimeCarrousel } from './carrousel/carrousel2';
+import { HorizontalCarousel, HorizontalCarouselNew,HorizontalCarouselNew2, AnimeCarrousel, HorrorCarrousel } from './carrousel/carrousel2';
 import HorizontalCarousel2 from './carrousel/carrousel3';
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
     <HorizontalCarouselNew/>
     <HorizontalCarouselNew2/>
     <AnimeCarrousel/>
+    <HorrorCarrousel/>
     </div>
   );
 }
