@@ -82,6 +82,21 @@ const newMovies = [
     { id: 12, imageUrl: '/h12.png'},
   ];
 
+  const awards=[
+    { id: 1, imageUrl: '/a1.png' },
+    { id: 2, imageUrl: '/a2.png' },
+    { id: 3, imageUrl: '/a3.png'},
+    { id: 4, imageUrl: '/a4.png' },
+    { id: 5, imageUrl: '/a5.png' },
+    { id: 6, imageUrl: '/a6.png'},  
+    { id: 7, imageUrl: '/a7.png' },
+    { id: 8, imageUrl: '/a8.png' },
+    { id: 9, imageUrl: '/a9.png'},
+    { id: 10, imageUrl: '/a10.png' },
+    { id: 11, imageUrl: '/a11.png' },
+    { id: 12, imageUrl: '/a12.png'},
+  ];
+
 const cloneCount = 4;
 
 const HorizontalCarousel = () => {
@@ -426,5 +441,74 @@ const HorizontalCarouselNew = () => {
       </div>
     );
   };
-  export { HorizontalCarousel, HorizontalCarouselNew ,HorizontalCarouselNew2, AnimeCarrousel, HorrorCarrousel};
+
+  const AwardWinners = () => {
+    const carouselRef = useRef(null);
+  
+    useEffect(() => {
+      if (carouselRef.current) {
+        const carousel = carouselRef.current;
+        carousel.scrollLeft = cloneCount * 150;
+      }
+    }, []);
+  
+    const handleScroll = () => {
+      if (carouselRef.current) {
+        const carousel = carouselRef.current;
+        if (carousel.scrollLeft <= 0) {
+          carousel.scrollLeft = carousel.scrollWidth - (cloneCount * 150 * 2);
+        }
+        if (
+          carousel.scrollLeft >=
+          carousel.scrollWidth - carousel.clientWidth
+        ) {
+          carousel.scrollLeft = cloneCount * 150;
+        }
+      }
+    };
+  
+    const scrollLeft = () => {
+      if (carouselRef.current) {
+        carouselRef.current.scrollBy({
+          left: -800,
+          behavior: 'smooth'
+        });
+      }
+    };
+  
+    const scrollRight = () => {
+      if (carouselRef.current) {
+        carouselRef.current.scrollBy({
+          left: 800,
+          behavior: 'smooth'
+        });
+      }
+    };
+  
+    const newMoviesWithClones = [
+      ...awards.slice(-cloneCount),
+      ...awards,
+      ...awards.slice(0, cloneCount)
+    ];
+  
+    return (
+      <div className="carousel-container">
+        <h2>Award Winning TV Shows</h2>
+        <button className="scroll-button left" onClick={scrollLeft}>&lt;</button>
+        <div
+          className="horizontal-scroll"
+          ref={carouselRef}
+          onScroll={handleScroll}
+        >
+          {newMoviesWithClones.map((movie, index) => (
+            <Card key={index} className="movie-card">
+              <Card.Img variant="top" src={movie.imageUrl} />
+            </Card>
+          ))}
+        </div>
+        <button className="scroll-button right" onClick={scrollRight}>&gt;</button>
+      </div>
+    );
+  };
+  export { HorizontalCarousel, HorizontalCarouselNew ,HorizontalCarouselNew2, AnimeCarrousel, HorrorCarrousel, AwardWinners};
 
