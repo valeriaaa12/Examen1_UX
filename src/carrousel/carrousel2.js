@@ -36,6 +36,22 @@ const newMovies = [
     { id: 11, imageUrl: '/k4.jpg' },
     { id: 12, imageUrl: '/sing.jpg'},
   ];
+
+  const newMovies2 = [
+    { id: 1, imageUrl: '/k8.jpg' },
+    { id: 2, imageUrl: '/k2.jpg' },
+    { id: 3, imageUrl: '/k5.jpg'},
+    { id: 4, imageUrl: '/k6.jpg' },
+    { id: 5, imageUrl: '/k7.jpg' },
+    { id: 6, imageUrl: '/k1.jpg'},  
+    { id: 7, imageUrl: '/k3.jpg' },
+    { id: 8, imageUrl: '/k9.jpg' },
+    { id: 9, imageUrl: '/lnd.jpg'},
+    { id: 10, imageUrl: '/k10.jpg' },
+    { id: 11, imageUrl: '/k4.jpg' },
+    { id: 12, imageUrl: '/k11.jpg'},
+  ];
+
 const cloneCount = 4;
 
 const HorizontalCarousel = () => {
@@ -174,6 +190,73 @@ const HorizontalCarouselNew = () => {
       </div>
     );
   };
+  const HorizontalCarouselNew2 = () => {
+    const carouselRef = useRef(null);
   
-  export { HorizontalCarousel, HorizontalCarouselNew };
+    useEffect(() => {
+      if (carouselRef.current) {
+        const carousel = carouselRef.current;
+        carousel.scrollLeft = cloneCount * 150;
+      }
+    }, []);
+  
+    const handleScroll = () => {
+      if (carouselRef.current) {
+        const carousel = carouselRef.current;
+        if (carousel.scrollLeft <= 0) {
+          carousel.scrollLeft = carousel.scrollWidth - (cloneCount * 150 * 2);
+        }
+        if (
+          carousel.scrollLeft >=
+          carousel.scrollWidth - carousel.clientWidth
+        ) {
+          carousel.scrollLeft = cloneCount * 150;
+        }
+      }
+    };
+  
+    const scrollLeft = () => {
+      if (carouselRef.current) {
+        carouselRef.current.scrollBy({
+          left: -800,
+          behavior: 'smooth'
+        });
+      }
+    };
+  
+    const scrollRight = () => {
+      if (carouselRef.current) {
+        carouselRef.current.scrollBy({
+          left: 800,
+          behavior: 'smooth'
+        });
+      }
+    };
+  
+    const newMoviesWithClones = [
+      ...newMovies2.slice(-cloneCount),
+      ...newMovies2,
+      ...newMovies2.slice(0, cloneCount)
+    ];
+  
+    return (
+      <div className="carousel-container">
+        <h2>Made in Korea</h2>
+        <button className="scroll-button left" onClick={scrollLeft}>&lt;</button>
+        <div
+          className="horizontal-scroll"
+          ref={carouselRef}
+          onScroll={handleScroll}
+        >
+          {newMoviesWithClones.map((movie, index) => (
+            <Card key={index} className="movie-card">
+              <Card.Img variant="top" src={movie.imageUrl} />
+            </Card>
+          ))}
+        </div>
+        <button className="scroll-button right" onClick={scrollRight}>&gt;</button>
+      </div>
+    );
+  };
+  export { HorizontalCarousel, HorizontalCarouselNew ,HorizontalCarouselNew2};
 

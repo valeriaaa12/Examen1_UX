@@ -63,7 +63,7 @@ const featuredContent = [
     title: "White Chicks",
     description: "Two disgraced FBI agents go way undercover in an effort to protect hotel heiresses the Wilson sisters from a kidnapping plot.",
     imageUrl: "/demonslayer.jpg",
-    videoUrl: "https://www.youtube.com/embed/aeVkbNka9HM?si=eJKRfzcjt1hI3Ep3",
+    videoUrl: "https://www.youtube.com/embed/aeVkbNka9HM",
     rating: "16+",
     type: "FILM"
   }
