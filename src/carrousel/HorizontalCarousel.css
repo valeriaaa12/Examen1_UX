@@ -105,7 +105,7 @@
   white-space: pre-line;
 }
 .movie-buttons-container {
-  overflow: visible; /* Ensure content is not clipped */
+  overflow: visible; 
 }
 .movie-title {
   font-weight: bold;
