@@ -38,18 +38,18 @@ const newMovies = [
   ];
 
   const newMovies2 = [
-    { id: 1, imageUrl: '/k8.jpg' ,title: 'Outer Banks' ,videoUrl:"https://www.youtube.com/embed/uk_hFfUFXh4",description:"|+16 |    4 Seasons \n Thriller • Exciting • Adventure"},
-    { id: 2, imageUrl: '/k2.jpg' ,title: 'Outer Banks' ,videoUrl:"https://www.youtube.com/embed/uk_hFfUFXh4",description:"|+16 |    4 Seasons \n Thriller • Exciting • Adventure"},
-    { id: 3, imageUrl: '/k5.jpg',title: 'Outer Banks' ,videoUrl:"https://www.youtube.com/embed/uk_hFfUFXh4",description:"|+16 |    4 Seasons \n Thriller • Exciting • Adventure"},
-    { id: 4, imageUrl: '/k6.jpg' ,title: 'Outer Banks' ,videoUrl:"https://www.youtube.com/embed/uk_hFfUFXh4",description:"|+16 |    4 Seasons \n Thriller • Exciting • Adventure"},
-    { id: 5, imageUrl: '/k7.jpg',title: 'Outer Banks' ,videoUrl:"https://www.youtube.com/embed/uk_hFfUFXh4",description:"|+16 |    4 Seasons \n Thriller • Exciting • Adventure" },
-    { id: 6, imageUrl: '/k1.jpg',title: 'Outer Banks' ,videoUrl:"https://www.youtube.com/embed/uk_hFfUFXh4",description:"|+16 |    4 Seasons \n Thriller • Exciting • Adventure"},  
-    { id: 7, imageUrl: '/k3.jpg',title: 'Outer Banks' ,videoUrl:"https://www.youtube.com/embed/uk_hFfUFXh4",description:"|+16 |    4 Seasons \n Thriller • Exciting • Adventure" },
-    { id: 8, imageUrl: '/k9.jpg',title: 'Outer Banks' ,videoUrl:"https://www.youtube.com/embed/uk_hFfUFXh4",description:"|+16 |    4 Seasons \n Thriller • Exciting • Adventure" },
-    { id: 9, imageUrl: '/lnd.jpg',title: 'Outer Banks' ,videoUrl:"https://www.youtube.com/embed/uk_hFfUFXh4",description:"|+16 |    4 Seasons \n Thriller • Exciting • Adventure"},
-    { id: 10, imageUrl: '/k10.jpg' ,title: 'Outer Banks' ,videoUrl:"https://www.youtube.com/embed/uk_hFfUFXh4",description:"|+16 |    4 Seasons \n Thriller • Exciting • Adventure"},
-    { id: 11, imageUrl: '/k4.jpg' ,title: 'Outer Banks' ,videoUrl:"https://www.youtube.com/embed/uk_hFfUFXh4",description:"|+16 |    4 Seasons \n Thriller • Exciting • Adventure"},
-    { id: 12, imageUrl: '/k11.jpg',title: 'Outer Banks' ,videoUrl:"https://www.youtube.com/embed/uk_hFfUFXh4",description:"|+16 |    4 Seasons \n Thriller • Exciting • Adventure"},
+    { id: 1, imageUrl: '/k8.jpg' ,title: 'Nevertheless' ,videoUrl:"https://www.youtube.com/embed/0x8cJUD6MMo",description:"|+13 |    10 Episodes \n Bittersweet • Intimate • Drama"},
+    { id: 2, imageUrl: '/k2.jpg' ,title: 'True Beauty' ,videoUrl:"https://www.youtube.com/embed/BhP1eYQ5Pxk",description:"|+13 |    Limited Series \n Swoonworthy • Romantic • Comedy"},
+    { id: 3, imageUrl: '/k5.jpg',title: 'Business Proposal' ,videoUrl:"https://www.youtube.com/embed/mh4R-WXRhQo",description:"|+16 |    12 Episodes \n Swoonworthy • Charming • Romantic"},
+    { id: 4, imageUrl: '/k6.jpg' ,title: 'Tomorrow' ,videoUrl:"https://www.youtube.com/embed/BsNRPkOV_Mo",description:"|+16 |    16 Episodes \n Emotional • Exciting • Drama"},
+    { id: 5, imageUrl: '/k7.jpg',title: 'Hometown Cha-Cha-Cha' ,videoUrl:"https://www.youtube.com/embed/z66fazyp3-M",description:"|+13 |    16 Episodes \n Charming • Feel-Good • Intimate" },
+    { id: 6, imageUrl: '/k1.jpg',title: 'King the Land' ,videoUrl:"https://www.youtube.com/embed/AGF16szMOmo",description:"|+13 |    Limited Series \n Swoonworthy • Romantic • Comedy"},  
+    { id: 7, imageUrl: '/k3.jpg',title: 'Twenty Five Twenty-One' ,videoUrl:"https://www.youtube.com/embed/gYp4cKumTwU",description:"|+13 |    16 Episodes \n Nostalgic • Inspiring • Intimate" },
+    { id: 8, imageUrl: '/k9.jpg',title: 'A Virtuous Business' ,videoUrl:"https://www.youtube.com/embed/2PsOxGQcMTU",description:"|+13 |    Limited Series \n Nostalgic • Exciting • Raunchy" },
+    { id: 9, imageUrl: '/lnd.jpg',title: 'Love Next Door' ,videoUrl:"https://www.youtube.com/embed/C3TpiZndAOo",description:"|+13 |    Limited Series \n Charming • Feel-Good • Romantic"},
+    { id: 10, imageUrl: '/k10.jpg' ,title: 'Squid Game' ,videoUrl:"https://www.youtube.com/embed/oqxAJKy0ii4",description:"|+16 |    1 Season \n Thriller • Violent • Suspenful"},
+    { id: 11, imageUrl: '/k4.jpg' ,title: 'Queen of Tears' ,videoUrl:"https://www.youtube.com/embed/Gg2D8zrzlOA",description:"|+13 |    16 Episodes \n Swoonworthy • Romantic • Comedy"},
+    { id: 12, imageUrl: '/mydemon.jpg',title: 'My Demon' ,videoUrl:"https://www.youtube.com/embed/D-bAfFqvxZg",description:"|+13 |    16 Episodes \n Intimate • Romantic • Comedy"},
   ];
 
   const anime =[
@@ -305,11 +305,11 @@ const HorizontalCarouselNew = () => {
   };
   const HorizontalCarouselNew2 = () => {
     const carouselRef = useRef(null);
+    const [hoveredMovieId, setHoveredMovieId] = useState(null);
   
     useEffect(() => {
       if (carouselRef.current) {
-        const carousel = carouselRef.current;
-        carousel.scrollLeft = cloneCount * 150;
+        carouselRef.current.scrollLeft = cloneCount * 150;
       }
     }, []);
   
@@ -319,10 +319,7 @@ const HorizontalCarouselNew = () => {
         if (carousel.scrollLeft <= 0) {
           carousel.scrollLeft = carousel.scrollWidth - (cloneCount * 150 * 2);
         }
-        if (
-          carousel.scrollLeft >=
-          carousel.scrollWidth - carousel.clientWidth
-        ) {
+        if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth) {
           carousel.scrollLeft = cloneCount * 150;
         }
       }
@@ -346,7 +343,15 @@ const HorizontalCarouselNew = () => {
       }
     };
   
-    const newMoviesWithClones = [
+    const handleMouseEnter = (movieId) => {
+      setHoveredMovieId(movieId);
+    };
+  
+    const handleMouseLeave = () => {
+      setHoveredMovieId(null);
+    };
+  
+    const moviesWithClones = [
       ...newMovies2.slice(-cloneCount),
       ...newMovies2,
       ...newMovies2.slice(0, cloneCount)
@@ -354,16 +359,44 @@ const HorizontalCarouselNew = () => {
   
     return (
       <div className="carousel-container">
-        <h2>Made in Korea</h2>
+        <h2>New on Netflix</h2>
         <button className="scroll-button left" onClick={scrollLeft}>&lt;</button>
-        <div
-          className="horizontal-scroll"
-          ref={carouselRef}
-          onScroll={handleScroll}
-        >
-          {newMoviesWithClones.map((movie, index) => (
-            <Card key={index} className="movie-card">
-              <Card.Img variant="top" src={movie.imageUrl} />
+        <div className="horizontal-scroll" ref={carouselRef} onScroll={handleScroll}>
+          {moviesWithClones.map((movie, index) => (
+            <Card
+              key={index}
+              className="movie-card"
+              onMouseEnter={() => handleMouseEnter(movie.id)}
+              onMouseLeave={handleMouseLeave}
+            >
+              {hoveredMovieId === movie.id ? (
+                <iframe
+                  className="movie-video"
+                  src={`${movie.videoUrl}?autoplay=1&mute=1&loop=1&playlist=${movie.videoUrl.split('/').pop()}`}
+                  title={movie.title}
+                  frameBorder="0"
+                  allow="autoplay; encrypted-media"
+                  
+                />
+              ) : (
+                <Card.Img variant="top" src={movie.imageUrl} alt={`Movie ${movie.title}`} />
+              )}
+                            {hoveredMovieId === movie.id && (
+                <div className="movie-hover-content">
+                  <div className="movie-buttons-container">
+                    <div className="movie-buttons">
+                      <button><img src='/play.png' height={5}></img></button>
+                      <button><img src='/more.png' height={5}></img></button>
+                      <button><img src='/like2.png' height={5}></img></button>
+                      <button><img src='/drop.png' height={5}></img></button>
+                    </div>
+                    <div className="movie-content">
+                      <div className="movie-title">{movie.title}</div>
+                      <div className="movie-description">{movie.description}</div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </Card>
           ))}
         </div>
