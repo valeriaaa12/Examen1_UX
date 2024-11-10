@@ -28,13 +28,13 @@ const newMovies = [
     { id: 3, imageUrl: '/t2.jpg',title: 'Twilight: New Moon' ,videoUrl:"https://www.youtube.com/embed/q58iQSHhZGg",description:"|+13 |   2 h 10 min \n Ominous • Suspenseful • Fantasy Movie"},
     { id: 4, imageUrl: '/t3.jpg' ,title: 'Twilight: Breaking Dawn Part 2' ,videoUrl:"https://www.youtube.com/embed/Ocz50YJOFTM",description:"|+13 |    1 h 55 min \n Ominous • Suspenseful • Fantasy Movie"},
     { id: 5, imageUrl: '/pb.jpg' ,title: 'Peaky Blinders' ,videoUrl:"https://www.youtube.com/embed/oVzVdvGIC7U",description:"|+16 |    6 Seasons \n Violent • Period Piece • Notable Soundtrack"},
-    { id: 6, imageUrl: '/arc.jpg',title: 'Arcane' ,videoUrl:"https://www.youtube.com/embed/fXmAurh012s",description:"|+16 |    4 Seasons \n Thriller • Exciting • Adventure"},  
-    { id: 7, imageUrl: '/qb.jpg' ,title: 'The Queens Gambit' ,videoUrl:"https://www.youtube.com/embed/oZn3qSgmLqI",description:"|+16 |    4 Seasons \n Thriller • Exciting • Adventure"},
-    { id: 8, imageUrl: '/p1.jpg' ,title: 'Dont Move' ,videoUrl:"https://www.youtube.com/embed/YjTZMEbpKsc",description:"|+16 |    4 Seasons \n Thriller • Exciting • Adventure"},
-    { id: 9, imageUrl: '/kk.jpg',title: 'Kakegurui' ,videoUrl:"https://www.youtube.com/embed/cTlHQiRNVl0",description:"|+16 |    4 Seasons \n Thriller • Exciting • Adventure"},
-    { id: 10, imageUrl: '/sk.jpg' ,title: 'The Disastrous Life of Saiki K' ,videoUrl:"https://www.youtube.com/embed/sbw7QB6nrTc",description:"|+16 |    4 Seasons \n Thriller • Exciting • Adventure"},
-    { id: 11, imageUrl: '/k4.jpg' ,title: 'Queen of Tears' ,videoUrl:"https://www.youtube.com/embed/Gg2D8zrzlOA",description:"|+16 |    4 Seasons \n Thriller • Exciting • Adventure"},
-    { id: 12, imageUrl: '/sing.jpg',title: 'Sing' ,videoUrl:"https://www.youtube.com/embed/9qPgK_u4vX8",description:"|+16 |    4 Seasons \n Thriller • Exciting • Adventure"},
+    { id: 6, imageUrl: '/arc.jpg',title: 'Arcane' ,videoUrl:"https://www.youtube.com/embed/fXmAurh012s",description:"|+16 |    2 Seasons \n Slick • Gritty • Adventure"},  
+    { id: 7, imageUrl: '/qb.jpg' ,title: 'The Queens Gambit' ,videoUrl:"https://www.youtube.com/embed/oZn3qSgmLqI",description:"|+16 |    Limited Series \n Cerebral • Intimate • Drama"},
+    { id: 8, imageUrl: '/p1.jpg' ,title: 'Dont Move' ,videoUrl:"https://www.youtube.com/embed/YjTZMEbpKsc",description:"|+16 |    1 h 32 min \n Thriller • Dark • Ominous"},
+    { id: 9, imageUrl: '/kk.jpg',title: 'Kakegurui' ,videoUrl:"https://www.youtube.com/embed/cTlHQiRNVl0",description:"|+13 |    2 Seasons \n Psychological • Exciting • Drama Anime"},
+    { id: 10, imageUrl: '/sk.jpg' ,title: 'The Disastrous Life of Saiki K' ,videoUrl:"https://www.youtube.com/embed/sbw7QB6nrTc",description:"|+13 |    3 Seasons \n Deadpan • Absurd • Offbeat"},
+    { id: 11, imageUrl: '/k4.jpg' ,title: 'Queen of Tears' ,videoUrl:"https://www.youtube.com/embed/Gg2D8zrzlOA",description:"|+13 |    16 Episodes \n Swoonworthy • Romantic • Comedy"},
+    { id: 12, imageUrl: '/sing.jpg',title: 'Sing' ,videoUrl:"https://www.youtube.com/embed/9qPgK_u4vX8",description:"|ALL|    1 h 48 min \n Rousing • Goofy • Musical"},
   ];
 
   const newMovies2 = [
