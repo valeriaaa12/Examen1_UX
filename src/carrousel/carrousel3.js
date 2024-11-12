@@ -67,7 +67,7 @@ const HorizontalCarousel2 = () => {
 
   return (
     <div className="carousel-container">
-    <h2>New on Netflix</h2>
+    <h2>Continue Watching</h2>
     <button className="scroll-button left" onClick={scrollLeft}>&lt;</button>
     <div className="horizontal-scroll" ref={carouselRef}>
       {moviesWithClones.map((movie, index) => (
