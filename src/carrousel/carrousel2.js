@@ -360,7 +360,7 @@ const HorizontalCarouselNew = () => {
   
     return (
       <div className="carousel-container">
-        <h2>New on Netflix</h2>
+        <h2>Made in Korea</h2>
         <button className="scroll-button left" onClick={scrollLeft}>&lt;</button>
         <div className="horizontal-scroll" ref={carouselRef} onScroll={handleScroll}>
           {moviesWithClones.map((movie, index) => (
