@@ -154,7 +154,7 @@ const HorizontalCarousel = () => {
   ];
 
   return (
-    <div className="carousel-container">
+    <div className="carousel-container" id="new">
       <h2>New on Netflix</h2>
       <button className="scroll-button left" onClick={scrollLeft}>&lt;</button>
       <div className="horizontal-scroll" ref={carouselRef} onScroll={handleScroll}>
@@ -256,8 +256,8 @@ const HorizontalCarouselNew = () => {
   ];
 
   return (
-    <div className="carousel-container">
-      <h2>Top Picks For You</h2>
+    <div className="carousel-container" id="list">
+      <h2>My List</h2>
       <button className="scroll-button left" onClick={scrollLeft}>&lt;</button>
       <div className="horizontal-scroll" ref={carouselRef} onScroll={handleScroll}>
         {moviesWithClones.map((movie, index) => (
@@ -575,7 +575,7 @@ const HorizontalCarouselNew = () => {
     ];
   
     return (
-      <div className="carousel-container">
+      <div className="carousel-container" id ="movies">
         <h2>Horror Movies</h2>
         <button className="scroll-button left" onClick={scrollLeft}>&lt;</button>
         <div
@@ -685,7 +685,7 @@ const HorizontalCarouselNew = () => {
     ];
   
     return (
-      <div className="carousel-container">
+      <div className="carousel-container" id="series">
         <h2>Award Winning TV Shows</h2>
         <button className="scroll-button left" onClick={scrollLeft}>&lt;</button>
         <div

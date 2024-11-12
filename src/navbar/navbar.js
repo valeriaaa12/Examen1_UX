@@ -23,11 +23,11 @@ function NavScrollExample() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1" style={{ color: 'white' }}>Home</Nav.Link>
-            <Nav.Link href="#action2" style={{ color: 'white' }}>Series</Nav.Link>
-            <Nav.Link href="#action3" style={{ color: 'white' }}>Movies</Nav.Link>
-            <Nav.Link href="#action4" style={{ color: 'white' }}>Recently Added</Nav.Link>
-            <Nav.Link href="#action5" style={{ color: 'white' }}>My list</Nav.Link>
+            <Nav.Link href="#hero-carousel" style={{ color: 'white' }}>Home</Nav.Link>
+            <Nav.Link href="#series" style={{ color: 'white' }}>Series</Nav.Link>
+            <Nav.Link href="#movies" style={{ color: 'white' }}>Movies</Nav.Link>
+            <Nav.Link href="#new" style={{ color: 'white' }}>Recently Added</Nav.Link>
+            <Nav.Link href="#list" style={{ color: 'white' }}>My list</Nav.Link>
           </Nav>
           <div className="d-flex align-items-center">
               <Form className="d-flex me-3">
