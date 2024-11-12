@@ -70,37 +70,34 @@ const featuredContent = [
 ];
 
 const Carrousel = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [index, setIndex] = useState(0);
 
-  const handleSlideChange = (selectedIndex) => {
-    setActiveIndex(selectedIndex); // Updates the active slide
+  const handleNext = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIndex(prev => prev === featuredContent.length - 1 ? 0 : prev + 1);
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prevIndex) => 
-        prevIndex === featuredContent.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 10000); // Autoplay interval
-
-    return () => clearInterval(interval); // Clear interval on unmount
-  }, [activeIndex]);
-
   return (
-    <div>
+    <div className="carousel-container">
+      <button 
+        className="carousel-control-prev" 
+        style={{ position: 'absolute', left: 0, zIndex: 2 }}
+      >
+        <span className="carousel-control-prev-icon" />
+      </button>
+
       <Carousel
         className="hero-carousel"
-        interval={null} // Disables auto-interval from Carousel component itself
-        controls={true} // Ensures previous/next buttons are displayed
-        indicators={true} // Display indicators
-        activeIndex={activeIndex} // Binds active slide to state
-        onSelect={handleSlideChange} // Updates state on manual change
+        activeIndex={index}
+        controls={false}
+        indicators={true}
       >
-        {featuredContent.map((content, index) => (
+        {featuredContent.map((content, idx) => (
           <Carousel.Item key={content.id} className="hero-carousel-item">
             <div className="content-wrapper">
               <div className="video-background">
-                {index === activeIndex && (
+                {idx === index && (
                   <iframe
                     className="hero-video"
                     src={`${content.videoUrl}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=${content.videoUrl.split('/').pop()}`}
@@ -133,6 +130,14 @@ const Carrousel = () => {
           </Carousel.Item>
         ))}
       </Carousel>
+
+      <button 
+        className="carousel-control-next" 
+        onClick={handleNext}
+        style={{ position: 'absolute', right: 0, zIndex: 2 }}
+      >
+        <span className="carousel-control-next-icon" />
+      </button>
     </div>
   );
 };
